@@ -21,9 +21,18 @@ display data on a hyperterminal (only with LSM6DS3).
 * X_NUCLEO_IKS01A1_Tilt: This application shows how to detect the tilt event using the X-NUCLEO-IKS01A2 (only with LSM6DS3).
 * X_NUCLEO_IKS01A1_WakeUp: This application shows how to detect the wake-up event using the X-NUCLEO-IKS01A2 (only with LSM6DS3).
 
-# Notes
+# Dependencies
 
-This library requires STM32duino LSM6DS0, LSM6DS3, LIS3MDL, HTS221 and LPS25HB libraries.
+The X-NUCLEO-IKS01A1 library requires the following STM32duino libraries:
+
+* STM32duino LSM6DS0: https://github.com/stm32duino/LSM6DS0
+* STM32duino LSM6DS3: https://github.com/stm32duino/LSM6DS3
+* STM32duino LIS3MDL: https://github.com/stm32duino/LIS3MDL
+* STM32duino HTS221: https://github.com/stm32duino/HTS221
+* STM32duino LPS25HB: https://github.com/stm32duino/LPS25HB
+
+
+# Notes
 
 In order to use LSM6DS3 on X-NUCLEO-IKS01A1 board you need the STEVAL-MKI160V1 board attached to X-NUCLEO-IKS01A1 board 
 via DIL24 interface.
