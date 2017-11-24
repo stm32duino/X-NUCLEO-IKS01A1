@@ -5,7 +5,7 @@ It is equipped with Arduino UNO R3 connector layout, and is designed around the 
 the LIS3MDL 3D magnetometer, the HTS221 humidity and temperature sensor and the LPS25HB pressure sensor.
 The X-NUCLEO-IKS01A1 interfaces with the STM32 microcontroller via the I²C pin, and it is possible to change the default I²C port.
 
-# Examples
+## Examples
 
 There are several examples with the X-NUCLEO-IKS01A1 library.
 * X_NUCLEO_IKS01A1_HelloWorld: This application provides a simple example of usage of the X-NUCLEO-IKS01A1 
@@ -21,7 +21,7 @@ display data on a hyperterminal (only with LSM6DS3).
 * X_NUCLEO_IKS01A1_Tilt: This application shows how to detect the tilt event using the X-NUCLEO-IKS01A2 (only with LSM6DS3).
 * X_NUCLEO_IKS01A1_WakeUp: This application shows how to detect the wake-up event using the X-NUCLEO-IKS01A2 (only with LSM6DS3).
 
-# Dependencies
+## Dependencies
 
 The X-NUCLEO-IKS01A1 library requires the following STM32duino libraries:
 
@@ -32,7 +32,7 @@ The X-NUCLEO-IKS01A1 library requires the following STM32duino libraries:
 * STM32duino LPS25HB: https://github.com/stm32duino/LPS25HB
 
 
-# Notes
+## Notes
 
 In order to use LSM6DS3 on X-NUCLEO-IKS01A1 board you need the STEVAL-MKI160V1 board attached to X-NUCLEO-IKS01A1 board 
 via DIL24 interface.
