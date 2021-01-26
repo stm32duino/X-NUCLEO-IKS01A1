@@ -48,10 +48,10 @@
 #define SerialPort Serial
 
 // Components.
-HTS221Sensor  *HumTemp;
-LPS25HBSensor *PressTemp;
-LSM6DS0Sensor *AccGyr;
-LIS3MDLSensor *Magneto;
+HTS221Sensor HumTemp(&DEV_I2C);
+LPS25HBSensor PressTemp(&DEV_I2C);
+LSM6DS0Sensor AccGyr(&DEV_I2C);
+LIS3MDLSensor Magneto(&DEV_I2C);
 
 void setup() {
   // Led.
@@ -63,16 +63,16 @@ void setup() {
   // Initialize I2C bus.
   DEV_I2C.begin();
 
-  // Initlialize components.
-  HumTemp = new HTS221Sensor (&DEV_I2C);
-  HumTemp->Enable();
-  PressTemp = new LPS25HBSensor(&DEV_I2C);
-  PressTemp->Enable();
-  AccGyr = new LSM6DS0Sensor(&DEV_I2C);
-  AccGyr->Enable_X();
-  AccGyr->Enable_G();
-  Magneto = new LIS3MDLSensor(&DEV_I2C);
-  Magneto->Enable();
+  // Initialize components.
+  HumTemp.begin();
+  HumTemp.Enable();
+  PressTemp.begin();
+  PressTemp.Enable();
+  AccGyr.begin();
+  AccGyr.Enable_X();
+  AccGyr.Enable_G();
+  Magneto.begin();
+  Magneto.Enable();
 }
 
 void loop() {
@@ -84,24 +84,24 @@ void loop() {
 
   // Read humidity and temperature.
   float humidity, temperature;
-  HumTemp->GetHumidity(&humidity);
-  HumTemp->GetTemperature(&temperature);
+  HumTemp.GetHumidity(&humidity);
+  HumTemp.GetTemperature(&temperature);
   
   // Read pressure.
   float pressure, temperature2;
-  PressTemp->GetPressure(&pressure);
-  PressTemp->GetTemperature(&temperature2);
+  PressTemp.GetPressure(&pressure);
+  PressTemp.GetTemperature(&temperature2);
   
 
   // Read accelerometer and gyroscope.
   int32_t accelerometer[3];
   int32_t gyroscope[3];
-  AccGyr->Get_X_Axes(accelerometer);
-  AccGyr->Get_G_Axes(gyroscope);
+  AccGyr.Get_X_Axes(accelerometer);
+  AccGyr.Get_G_Axes(gyroscope);
 
   // Read magnetometer.
   int32_t magnetometer[3];
-  Magneto->GetAxes(magnetometer);
+  Magneto.GetAxes(magnetometer);
 
   // Output data.
   SerialPort.print("| Hum[%]: ");
